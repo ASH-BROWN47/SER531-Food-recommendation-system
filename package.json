@@ -329,8 +329,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "dev": "next dev",
-    "dev:server": "nodemon server.js"
+    "dev": "next build",
+    "start:prod": "NODE_ENV=production node server.js"
   },
   "author": "",
   "license": "ISC",

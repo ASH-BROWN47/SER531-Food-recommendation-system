@@ -4,8 +4,11 @@ const cors = require('cors');
 const app = express();
 const PORT = 4000;
 
-const GRAPHDB_ENDPOINT = 'http://Deepanjays-MacBook-Pro.local:7200/repositories/projectMain';
+const GRAPHDB_ENDPOINT = process.env.GRAPHDB_ENDPOINT || 'https://<your-azure-domain>/repositories/projectMain';
 
+app.listen(process.env.PORT || PORT, () => {
+  console.log(`Server is running on http://localhost:${process.env.PORT || PORT}`);
+});
 app.use(cors());
 app.use(express.json());
 
